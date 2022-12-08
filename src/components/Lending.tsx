@@ -45,7 +45,7 @@ const Lending = () => {
     
     const updateStatus = (status:string) => dispatch({type: "updateNFTStatus", target: "MainNFTBalance", payload: [tokenAddress, tokenId, status]})
     try {
-    // updateStatus('lending')
+    updateStatus('lending')
     lend(resolvedAddress, tokenAddress, tokenId, connection, updateStatus)
     } catch {
       console.log("lend failed")
