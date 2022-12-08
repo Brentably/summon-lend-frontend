@@ -7,12 +7,14 @@ import { Web3OnboardProvider, init } from '@web3-onboard/react'
 import injectedModule from '@web3-onboard/injected-wallets'
 import walletConnectModule from '@web3-onboard/walletconnect'
 import coinbaseWalletModule from '@web3-onboard/coinbase'
+import gnosisModule from '@web3-onboard/gnosis'
+
 
 // (window as any).global = window;
-// window.Buffer = window.Buffer || require("buffer").Buffer; 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-global.Buffer = require("buffer").Buffer;
-global.process = require("process");
+window.Buffer = window.Buffer || require("buffer").Buffer; 
+// global.Buffer = require("buffer").Buffer;
+// global.process = require("process");
 
 
 const ethereumGoerli = {
@@ -38,9 +40,10 @@ const polygonMainnet = {
 
 const chains = [ethereumGoerli, mainnet]
 
+const gnosis = gnosisModule()
 const walletConnect = walletConnectModule()
-const coinbaseWalletSdk = coinbaseWalletModule()
-const wallets = [injectedModule(), walletConnect, coinbaseWalletSdk]
+// const coinbaseWalletSdk = coinbaseWalletModule()
+const wallets = [injectedModule(), walletConnect, gnosis]
 
 const appMetadata = {
   name: 'Connect Wallet Example',

@@ -18,14 +18,14 @@ let SummonManager = new ethers.Contract( ManagerAddress , ManagerABI , signer)
 console.dir(SummonManager)
 
 // if it's a wallet, find out if they have a Summon Address
-
+console.dir(signer)
 
 
 
 // console.log(`to Summon Address is ${OnChainSummonAddress}`)
 // now take the summon address, set approval for all if it hasn't been, 
 
-let TokenContract = new ethers.Contract(tokenAddress, ERC721 , signer)
+let TokenContract = new ethers.Contract(tokenAddress, ERC721, signer)
 console.dir(TokenContract)
 
 //NEED TO CHECK AND GIVE SUMMON MANAGER APPROVAL, NOT SUMMON ADDRESS
