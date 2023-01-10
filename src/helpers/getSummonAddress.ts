@@ -31,7 +31,7 @@ async function getSummonAddress(connection: IConnection): Promise<string> {
 
   const SummonManager = new ethers.Contract(ManagerAddress, ManagerABI, signer)
   const SummonVaults = SummonManager.filters.SummonCreated(walletAddress)
-  const AllVaultsLogs = await SummonManager.queryFilter(SummonVaults, -100000, "latest");
+  const AllVaultsLogs = await SummonManager.queryFilter(SummonVaults, -1000000, "latest");
   const VaultsForAddress = AllVaultsLogs // I was filtering 2x
   // console.dir(AllVaultsLogs)
   // const VaultsForAddress = AllVaultsLogs.filter(log => log?.args?.owner == walletAddress)

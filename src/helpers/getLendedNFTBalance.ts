@@ -15,8 +15,8 @@ async function getLendedNFTBalance(connection: IConnection): Promise<IAsset[] | 
   // console.dir(SummonManager)
   const filterLend = SummonManager.filters.TokenLendedFrom(walletAddress);
   const filterRetrieve = SummonManager.filters.TokenWithdrawnTo(walletAddress);
-  const lendLogs = await SummonManager.queryFilter(filterLend, -100000, "latest");
-  const retrieveLogs = await SummonManager.queryFilter(filterRetrieve, -100000, "latest");
+  const lendLogs = await SummonManager.queryFilter(filterLend, -1000000, "latest");
+  const retrieveLogs = await SummonManager.queryFilter(filterRetrieve, -1000000, "latest");
   
   // returns nice arrays of lender, summon, tokenAddress, and tokenId
   
