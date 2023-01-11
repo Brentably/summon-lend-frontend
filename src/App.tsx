@@ -99,7 +99,7 @@ useEffect(() => {console.log(`view changed to: ${view}`)}, [view])
       <Header />
 
     </div>
-    {chainID && chainID != 5 && chainID != 1 && <h3 className='sub'>Summon is currently live on testnet, switch chains to Goerli</h3>}
+    {chainID && chainID != 5 && chainID != 1 && <h3 className='sub'>Summon is currently live on Goerli and Mainnet. Switch chains to use.</h3>}
     {chainID == 1 && <h3 className='sub red'>Summon is experimental on mainnet. <br /> Switch chains to Goerli or use at your own risk.</h3>}
     <div className={view == "lend" ? "tabContainer" : "invisible"}>
 
